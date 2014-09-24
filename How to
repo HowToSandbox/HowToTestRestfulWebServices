@@ -1,0 +1,6 @@
+How to
+
+Use ruby 2.0.0
+add airborne to your gemfile
+bundle
+helloWorld.rb should run
