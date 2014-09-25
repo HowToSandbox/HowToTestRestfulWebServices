@@ -1,6 +1,12 @@
 How to
 
-Use ruby 2.0.0
+rvm ruby 2.0.0
+rvm gemset create restfulAPI
+rvm gemset use restfulAPI
+gem install bundler
 add airborne to your gemfile
 bundle
+
+
+
 helloWorld.rb should run
