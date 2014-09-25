@@ -2,7 +2,7 @@ require 'rspec'
 require 'airborne'
 #require 'json'
 
-describe 'zkillboard API' do
+describe 'twiddling apis for fun and profit' do
 
 		# it 'should validate the type on an http url' do
 		# 	get 'http://www.caltech.edu/calendar_api/list.json?sponsor_ids=8957'
