@@ -10,7 +10,7 @@ describe 'zkillboard API' do
 		# 	expect_json({"id" => "32057"})
 		# end
 
-		it 'should be avle to give me something from twitter' do
+		it 'should be able to give me something from twitter' do
 		get 'https://api.twitter.com/1.1/statuses/home_timeline.json'
 		expect_json_types({errors: :array})
 		expect_json_types({message: :string})
