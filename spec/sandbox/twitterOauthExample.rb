@@ -1,17 +1,18 @@
 require 'twitter'
-'twitter/oauth' 
-# oauth = Twitter::OAuth.new('consumer token', 'consumer secret')
-# oauth.authorize_from_access('access token', 'access secret')
-#oauth = Twitter::OAuth.new('fza6sQO25mHgjmIoL5iLixV4s', 'rYQytIoBZoxoZy2LNasxnuylSkVYsgPNJiKx0aUHmLPQ7PXCB0')
-#oauth.authorize_from_access('2844741523-fIDu8BgpChxpJFyn0gY2WQMwNRjbjyfnBtxJPRI', 'OCjSQ73hwi8KbdrC7ypNR7Tb8zZEV5tXTtSRnrX279OF9')
+require_relative '../support/secrets'
+
+	konsumer_key 		= TwitterAPI::CONSUMER_KEY
+	konsumer_secret 	= TwitterAPI::CONSUMER_SECRET
+	akkess_token 		= TwitterAPI::ACCESS_TOKEN 
+	akkess_token_secret = TwitterAPI::ACCESS_TOKEN_SECRET
 
 client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = "o7WSVMCZAbraEf1g8avPBjfLE"
-  config.consumer_secret     = "EMBNOwMOURiEa7EwTHfbc6G1jjQiFzsRWbJrEf3VsxYzaq5WXC"
-  config.access_token        = "2844741523-fUE9ialSzVdT3DmKX6D2VHh7o1SeTVxMNxQOx5D"
-  config.access_token_secret = "YueMyIwaeVmFtn1VpDPZ7vmo5OcEoNrZE4BOaK1qMpRsc"
+  config.consumer_key        = konsumer_key['secret']
+  config.consumer_secret     = konsumer_secret['secret']
+  config.access_token        = akkess_token['secret']
+  config.access_token_secret = akkess_token_secret['secret']
 end
 
-#client = Twitter::Base.new(oauth)
-client.update('Tweeting with OAuth access!')
-puts "Tweeted a thing!"
+
+	client.update('Tweeting with OAuth access!')
+	puts "Tweeted a thing!"
