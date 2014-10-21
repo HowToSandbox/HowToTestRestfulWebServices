@@ -1,0 +1,24 @@
+{
+	:killID=>"41385036", 
+	:solarSystemID=>"30001236", 
+	:killTime=>"2014-09-21 04:29:00", 
+	:moonID=>"0", 
+	:victim=>{
+		:shipTypeID=>"12034", 
+		:damageTaken=>"2392", 
+		:factionName=>"", 
+		:factionID=>"0", 
+		:allianceName=>"The Volition Cult", 
+		:allianceID=>"240835459", 
+		:corporationName=>"Christ's Little angels", 
+		:corporationID=>"98175271", 
+		:characterName=>"genghiscayyne", 
+		:characterID=>"957894570", 
+		:victim=>""}, 
+	:zkb=>{
+		:totalValue=>"34347949.58", 
+		:points=>"11", 
+		:source=>"API", 
+		:involved=>9}
+	}
+
