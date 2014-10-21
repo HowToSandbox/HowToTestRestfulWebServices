@@ -10,7 +10,7 @@ before_script:
  - ls
 
 script:
-- rake spec:livewire
+- rake rspec:airborne
 
 notifications:
      email:
