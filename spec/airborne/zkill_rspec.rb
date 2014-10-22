@@ -40,7 +40,7 @@ describe 'zKillboard Killmail' do
 	it '- the KM hashs are hashs' do
 		get 'https://zkillboard.com/api/kills/characterID/94491288/no-items/no-attackers/api-only//killID/41385036/'  
 		expect_json_types('0', {victim: :object})
-		#expect_json_types('0', {zkm: :object})  # This test fails, and I don't know why yet
+		expect_json_types('0', {zkb: :object})  
 	end
 
 	it '- The number of parties involved should be an integer' do 
