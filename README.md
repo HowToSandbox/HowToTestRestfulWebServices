@@ -17,9 +17,11 @@ Testing RESTfull API's is kind of a hot topic these days, and everyone and their
 ## What to do and not to do!
 * Do test you data types
 
-'''ruby
-expect_json_types('0', {key: :string, key: :int)
-'''
+'
+
+>expect_json_types('0', {key: :string, key: :int)
+
+'
 * Do test your values
 * Do test your structures
 * Do be aware of the history of the API you are writing tests for. Is it versioned or unversioned? If it is not versioned, have the data structure changed historically in surprising ways? These things will make your tests go wonky.
