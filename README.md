@@ -6,7 +6,7 @@ Testing RESTfull API's is kind of a hot topic these days, and everyone and their
 ## What tools are out there?
 ###JSON API's:
 ##### airborne
-###### This gem runs under rspec, and gives you nicely packaged verbs. It basicly does all the heavy lifting for you in terms of actually fetching your data. 
+###### This gem runs under rspec, and gives you nicely packaged verbs. It basicly does all the heavy lifting for you in terms of actually manipulating your API. 
 ##### json_expressions
 ###### This gem will let you play in any framework you like, and will also let you build up 'patterns' to match your responses against. You do however need to have someplace to get your verbs. Rails come to mind.
 
