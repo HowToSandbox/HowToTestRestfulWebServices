@@ -39,7 +39,7 @@ client.user_timeline(213747670).take(3).collect do |tweet|
 end
 
 
-
+  
 
 
 a_tweet = client.search("#ruby -rt", :lang => "ja").first.text

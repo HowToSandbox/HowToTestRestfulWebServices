@@ -2,6 +2,7 @@ require 'rspec'
 require 'airborne'
 #require 'json'
 
+
 describe 'twitter error' do
 		it 'should be able to give me something from twitter' do
 			get 'https://api.twitter.com/1.1/statuses/home_timeline.json'
