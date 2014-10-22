@@ -7,7 +7,7 @@ describe 'zKillboard Killmail' do
 	it '- Verify we get just one KM, and it is the right one' do
 		get 'https://zkillboard.com/api/kills/characterID/94491288/no-items/no-attackers/api-only//killID/41385036/' 
 		response = json_body[1]
-		#puts response
+		puts json_body[0]
 		expect_json('0', {:killID => "41385036" })	#[0] should be the record we fetched
 		expect(response	).to be_nil # [1] should be nill because we only fetched one record
 	end	
@@ -48,12 +48,15 @@ describe 'zKillboard Killmail' do
 		get 'https://zkillboard.com/api/kills/characterID/94491288/no-items/no-attackers/api-only//killID/41385036/'  
 		expect_json_types('0.zkb', {involved: :int})
 	end
-
+	it 'Verify the date format' do
+		get 'https://zkillboard.com/api/kills/characterID/94491288/no-items/no-attackers/api-only//killID/41385036/'
+		expect_json('0', :killTime => regex("\\\d{4}-\\\d{2}-\\\d{2} \\\d{2}:\\\d{2}:\\\d{2}"))
+	end	
 	it '- Verify some data in a KM' do
 		get 'https://zkillboard.com/api/kills/characterID/94491288/no-items/no-attackers/api-only//killID/41385036/' 
 		expect_json('0', {:killID => "41385036" })
 		expect_json('0', {:solarSystemID => "30001236" })	
-		expect_json('0', {:killTime=> "2014-09-21 04:29:00" })		
+		expect_json('0', {:killTime=> "2014-09-21 04:29:00" })	
 		expect_json('0', {:moonID => "0" })	
 		expect_json('0.victim', {:shipTypeID => "12034" })
 		expect_json('0.victim', {:damageTaken => "2392" })	
@@ -83,7 +86,14 @@ describe 'zKillboard Killmail' do
 			#raise "ZKB does not respect /limit/1/"
 			puts "expected 1, got #{json_body.length}"
 		end
+
+		it 'Cast Ints to Verify Intyness' do
+			get 'https://zkillboard.com/api/kills/characterID/94491288/no-items/no-attackers/api-only//killID/41385036/' 
+			expect(json_body[0][:killID].to_i.to_s).to eq(json_body[0][:killID])
+			expect(json_body[0][:solarSystemID].to_i.to_s).to eq(json_body[0][:solarSystemID])
+		end
 	end	 
+
 
 
 #end
