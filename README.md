@@ -31,6 +31,8 @@ Testing RESTfull API's is kind of a hot topic these days, and everyone and their
 
 > expect_json('0', :date => regex("\\\d{4}-\\\d{2}-\\\d{2} \\\d{2}:\\\d{2}:\\\d{2}"))
 
+> expect(json_body[0][:stringyInt].to_i.to_s).to eq(json_body[0][:stringyInt])
+
 * Do test your structures
 
 > expect(json_body.class).to eq(Array)
