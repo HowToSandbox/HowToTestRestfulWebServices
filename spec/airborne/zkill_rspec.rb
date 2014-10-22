@@ -76,15 +76,17 @@ describe 'zKillboard Killmail' do
 		#
 		# This fails because the api does not respect the limit we ask for by passing /limit/1/
 		#
-		get 'https://zkillboard.com/api/kills/characterID/94491288/no-items/no-attackers/api-only/limit/1/' 
-		shouldBeTruthy 	= json_body[0]
-		shouldBeNil 	= json_body[1]
-		expect(shouldBeTruthy).to be_truthy
-		expect(shouldBeNil	).to be_nil
+		get 'https://zkillboard.com/api/kills/characterID/94491288/no-items/no-attackers/api-only/limit/1/'
+		pending("Someday ZKB will respect /limit/1/")
+			fail 
+			expect(json_body.length).to eq(1)
+			#raise "ZKB does not respect /limit/1/"
+			puts "expected 1, got #{json_body.length}"
+		end
 	end	 
 
 
-end
+#end
 
 
 
