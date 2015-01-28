@@ -7,7 +7,7 @@ describe 'zKillboard Killmail' do
 	it '- Verify we get just one KM, and it is the right one' do
 		get 'https://zkillboard.com/api/kills/characterID/94491288/no-items/no-attackers/api-only//killID/41385036/' 
 		response = json_body[1]
-		puts json_body[0]
+		#puts json_body[0]
 		expect_json('0', {:killID => "41385036" })	#[0] should be the record we fetched
 		expect(response	).to be_nil # [1] should be nill because we only fetched one record
 	end	
